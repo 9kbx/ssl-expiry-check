@@ -21,6 +21,6 @@ Dictionary<string, int> data = await SSLChecker.GetRemainingDays(hostname);
 // www.google.com,  90
 
 if (data.Values.First() < 0)
-    Console.Write($"{hostname} has expired")
+    Console.Write($"{hostname} ssl certificate has expired")
 ```
 
