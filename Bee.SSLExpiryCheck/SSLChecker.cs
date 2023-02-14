@@ -15,7 +15,7 @@ namespace SSLExpiryCheck
         /// <param name="cancellationToken"></param>
         /// <param name="timeout">timeout seconds</param>
         /// <returns></returns>
-        public static async Task<Dictionary<string,DateTime?>> GetExpirationDateAsync(string hostname, CancellationToken cancellationToken = default, int timeout = 5)
+        public static async Task<Dictionary<string,DateTime?>> GetExpirationDateAsync(string hostname, CancellationToken cancellationToken = default(CancellationToken), int timeout = 5)
         {
             // ref:https://stackoverflow.com/a/73299738
 
@@ -80,7 +80,7 @@ namespace SSLExpiryCheck
         /// <param name="cancellationToken"></param>
         /// <param name="timeout">timeout seconds</param>
         /// <returns></returns>
-        public static async Task<Dictionary<string, int>> GetRemainingDaysAsync(string hostname, CancellationToken cancellationToken = default, int timeout = 5)
+        public static async Task<Dictionary<string, int>> GetRemainingDaysAsync(string hostname, CancellationToken cancellationToken = default(CancellationToken), int timeout = 5)
         {
             var expirationDate = await GetExpirationDateAsync(hostname, cancellationToken, timeout);
             if (expirationDate != null && expirationDate.Count > 0)
