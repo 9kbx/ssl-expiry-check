@@ -1,10 +1,11 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
-  <PropertyGroup>
-    <TargetFramework>netstandard2.1</TargetFramework>
-	  <RootNamespace>Bee.SSLExpiryCheck</RootNamespace>
-	  <PackageId>Bee.SSLExpiryCheck</PackageId>
-	  <PackageDescription>check SSL certificate expiry using .NET C#</PackageDescription>
-  </PropertyGroup>
+	<Import Project="..\common.props" />
+	<PropertyGroup>
+		<TargetFramework>netstandard2.1</TargetFramework>
+		<RootNamespace>Bee.SSLExpiryCheck</RootNamespace>
+		<PackageId>Bee.SSLExpiryCheck</PackageId>
+		<PackageDescription>check SSL certificate expiry using .NET C#</PackageDescription>
+	</PropertyGroup>
 
 </Project>
