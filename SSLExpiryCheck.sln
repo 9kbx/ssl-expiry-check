@@ -3,9 +3,23 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.4.33205.214
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SSLExpiryCheck", "SSLExpiryCheck\SSLExpiryCheck.csproj", "{733EA061-A577-4CD0-ABDB-B164F446FAE8}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "props", "props", "{4B2E2DA8-7C12-4B1A-A2DD-CB48EC6466DA}"
+	ProjectSection(SolutionItems) = preProject
+		common.props = common.props
+	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SSLExpiryCheck.Tests", "SSLExpiryCheck.Tests\SSLExpiryCheck.Tests.csproj", "{42371A97-950B-4622-A3DD-45BA49C7A470}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{1FC75100-83F4-4172-918B-442C35425DAA}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Bee.SSLExpiryCheck", "Bee.SSLExpiryCheck\Bee.SSLExpiryCheck.csproj", "{3BCBBF59-70D7-4190-A4F6-DD6F0F7E7885}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Bee.SSLExpiryCheck.Tests", "Bee.SSLExpiryCheck.Tests\Bee.SSLExpiryCheck.Tests.csproj", "{077DCAF8-4489-4E44-94D1-FBEAD20ECBEB}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "nupkg", "nupkg", "{BCCFE181-A2B9-4B14-BCD0-C182EAF73A93}"
+	ProjectSection(SolutionItems) = preProject
+		nupkg\common.ps1 = nupkg\common.ps1
+		nupkg\pack.ps1 = nupkg\pack.ps1
+		nupkg\push_packages.ps1 = nupkg\push_packages.ps1
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -13,17 +27,21 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{733EA061-A577-4CD0-ABDB-B164F446FAE8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{733EA061-A577-4CD0-ABDB-B164F446FAE8}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{733EA061-A577-4CD0-ABDB-B164F446FAE8}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{733EA061-A577-4CD0-ABDB-B164F446FAE8}.Release|Any CPU.Build.0 = Release|Any CPU
-		{42371A97-950B-4622-A3DD-45BA49C7A470}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{42371A97-950B-4622-A3DD-45BA49C7A470}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{42371A97-950B-4622-A3DD-45BA49C7A470}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{42371A97-950B-4622-A3DD-45BA49C7A470}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3BCBBF59-70D7-4190-A4F6-DD6F0F7E7885}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3BCBBF59-70D7-4190-A4F6-DD6F0F7E7885}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3BCBBF59-70D7-4190-A4F6-DD6F0F7E7885}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3BCBBF59-70D7-4190-A4F6-DD6F0F7E7885}.Release|Any CPU.Build.0 = Release|Any CPU
+		{077DCAF8-4489-4E44-94D1-FBEAD20ECBEB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{077DCAF8-4489-4E44-94D1-FBEAD20ECBEB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{077DCAF8-4489-4E44-94D1-FBEAD20ECBEB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{077DCAF8-4489-4E44-94D1-FBEAD20ECBEB}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{3BCBBF59-70D7-4190-A4F6-DD6F0F7E7885} = {1FC75100-83F4-4172-918B-442C35425DAA}
+		{077DCAF8-4489-4E44-94D1-FBEAD20ECBEB} = {1FC75100-83F4-4172-918B-442C35425DAA}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {29E7BCC7-E0A1-4CDC-BC9E-9DF4332CAACB}

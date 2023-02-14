@@ -1,5 +1,5 @@
 # ssl-expiry-check
-check SSL certificate  expiry using .NET C#
+check SSL certificate expiry using .NET C#
 
 ## Usage
 
