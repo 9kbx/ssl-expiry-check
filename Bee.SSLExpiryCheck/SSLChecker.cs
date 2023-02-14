@@ -7,7 +7,7 @@ namespace SSLExpiryCheck
 {
     public class SSLChecker
     {
-        public static async Task<Dictionary<string,DateTime?>> GetExpirationDate(string hostname)
+        public static async Task<Dictionary<string,DateTime?>> GetExpirationDateAsync(string hostname)
         {
             // ref:https://stackoverflow.com/a/73299738
 
@@ -57,9 +57,9 @@ namespace SSLExpiryCheck
             return result;
         }
 
-        public static async Task<Dictionary<string, int>> GetRemainingDays(string hostname)
+        public static async Task<Dictionary<string, int>> GetRemainingDaysAsync(string hostname)
         {
-            var expirationDate = await GetExpirationDate(hostname);
+            var expirationDate = await GetExpirationDateAsync(hostname);
             if (expirationDate != null && expirationDate.Count > 0)
             {
                 var result = new Dictionary<string, int>();

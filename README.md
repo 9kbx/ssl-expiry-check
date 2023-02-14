@@ -5,7 +5,7 @@ check SSL certificate expiry using .NET C#
 
 ```C#
 string hostname = "www.google.com";
-Dictionary<string, int> data = await SSLChecker.GetRemainingDays(hostname);
+Dictionary<string, int> data = await SSLChecker.GetRemainingDaysAsync(hostname);
 
 // result
 // hostname, days remaining
@@ -13,7 +13,7 @@ Dictionary<string, int> data = await SSLChecker.GetRemainingDays(hostname);
 
 
 string hostname = "google.com"
-Dictionary<string, int> data = await SSLChecker.GetRemainingDays(hostname);
+Dictionary<string, int> data = await SSLChecker.GetRemainingDaysAsync(hostname);
 
 // result (http 301)
 // hostname, days remaining

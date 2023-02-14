@@ -21,6 +21,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "nupkg", "nupkg", "{BCCFE181
 		nupkg\push_packages.ps1 = nupkg\push_packages.ps1
 	EndProjectSection
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "files", "files", "{1D3C124F-4D89-4707-92B1-6538383F7D14}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -40,8 +42,10 @@ Global
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
+		{4B2E2DA8-7C12-4B1A-A2DD-CB48EC6466DA} = {1D3C124F-4D89-4707-92B1-6538383F7D14}
 		{3BCBBF59-70D7-4190-A4F6-DD6F0F7E7885} = {1FC75100-83F4-4172-918B-442C35425DAA}
 		{077DCAF8-4489-4E44-94D1-FBEAD20ECBEB} = {1FC75100-83F4-4172-918B-442C35425DAA}
+		{BCCFE181-A2B9-4B14-BCD0-C182EAF73A93} = {1D3C124F-4D89-4707-92B1-6538383F7D14}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {29E7BCC7-E0A1-4CDC-BC9E-9DF4332CAACB}

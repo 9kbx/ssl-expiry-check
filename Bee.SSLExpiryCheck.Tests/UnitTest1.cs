@@ -8,7 +8,7 @@ namespace SSLExpiryCheck.Tests
         [TestMethod]
         public async Task TestIsNotNull()
         {
-            var r = await SSLChecker.GetExpirationDate(_TestHostName);
+            var r = await SSLChecker.GetExpirationDateAsync(_TestHostName);
 
             Assert.IsNotNull(r);
         }
@@ -16,7 +16,7 @@ namespace SSLExpiryCheck.Tests
         [TestMethod]
         public async Task TestGetRemainingDays()
         {
-            var r = await SSLChecker.GetRemainingDays(_TestHostName);
+            var r = await SSLChecker.GetRemainingDaysAsync(_TestHostName);
 
             Assert.IsTrue(r.Count > 0);
             Assert.AreEqual<string>(_TestHostName, r.Keys.First());
