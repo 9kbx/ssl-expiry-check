@@ -1,13 +1,21 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Net.Http;
+using System.Threading;
 using System.Threading.Tasks;
 
 namespace SSLExpiryCheck
 {
     public class SSLChecker
     {
-        public static async Task<Dictionary<string,DateTime?>> GetExpirationDateAsync(string hostname)
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="hostname"></param>
+        /// <param name="cancellationToken"></param>
+        /// <param name="timeout">timeout seconds</param>
+        /// <returns></returns>
+        public static async Task<Dictionary<string,DateTime?>> GetExpirationDateAsync(string hostname, CancellationToken cancellationToken = default, int timeout = 5)
         {
             // ref:https://stackoverflow.com/a/73299738
 
@@ -49,17 +57,32 @@ namespace SSLExpiryCheck
 
             // Create an HttpClient object
             using var client = new HttpClient(handler);
+            client.Timeout = TimeSpan.FromSeconds(timeout);
 
-            using HttpResponseMessage response = await client.GetAsync($"https://{hostname}/");
+            try
+            {
+                using HttpResponseMessage response = await client.GetAsync($"https://{hostname}/", cancellationToken);
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
 
             // wait for callback
             //await Task.Delay(10000);
             return result;
         }
 
-        public static async Task<Dictionary<string, int>> GetRemainingDaysAsync(string hostname)
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="hostname"></param>
+        /// <param name="cancellationToken"></param>
+        /// <param name="timeout">timeout seconds</param>
+        /// <returns></returns>
+        public static async Task<Dictionary<string, int>> GetRemainingDaysAsync(string hostname, CancellationToken cancellationToken = default, int timeout = 5)
         {
-            var expirationDate = await GetExpirationDateAsync(hostname);
+            var expirationDate = await GetExpirationDateAsync(hostname, cancellationToken, timeout);
             if (expirationDate != null && expirationDate.Count > 0)
             {
                 var result = new Dictionary<string, int>();
